@@ -17,3 +17,6 @@ loop and will not fail.*
 > My goal with step one is to create a useable thermostate that can read the temperature and control a fan 
 > to adjust the temperature accordingly. So basically create an a/c unit and thermostate. 
 
+    def foo():
+      if not bar:
+        return True

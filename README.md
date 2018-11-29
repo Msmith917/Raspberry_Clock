@@ -12,3 +12,5 @@
 *I will step by step by step work to incorporate each of these functions to the Raspberry Pi
 even using the Arduino as well. Start with a simple program that runs and on an infinite
 loop and will not fail.*
+
+# STEP ONE: Temperature Control

@@ -39,4 +39,19 @@ void loop() {
   // print the number to the serial monitor
   Serial.println(temp_f);
   delay(1000);
-}```
+}
+```
+##### Code used for Raspberry written in Python3.6
+```Python
+import serial, re, os, time
+from serial import Serial
+
+while True:
+  os.system('clear')
+  ser = serial.Serial('/dev/ttyACM0', 9600)
+  byt = ser.readline()
+  res = re.compile('\d+.\d+')
+  temp = res.search(str(byt))
+  temp_f = round(float(temp.group()))
+  time.sleep(1)
+  ```

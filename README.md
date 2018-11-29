@@ -13,4 +13,7 @@
 even using the Arduino as well. Start with a simple program that runs and on an infinite
 loop and will not fail.*
 
-## STEP ONE: Temperature Control
+## 1. Temperature Control
+> My goal with step one is to create a useable thermostate that can read the temperature and control a fan 
+> to adjust the temperature accordingly. So basically create an a/c unit and thermostate. 
+

@@ -21,3 +21,11 @@ loop and will not fail.*
 def func():
   return state
   ```
+```c
+void setup(){
+  Serial.begin(9600);
+  }
+void loop(){
+  Serial.println(temp);
+  }
+  ```

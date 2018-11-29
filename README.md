@@ -1,6 +1,6 @@
 # Raspberry_Home
-Private repository dedicated to my raspberry pi smart home project. 
-This project will be to create a smart home for my room
+> Private repository dedicated to my raspberry pi smart home project. 
+> This project will be to create a smart home for my room
 
 Functions (should include but not limited to):
   - Reading/Adjusting temperature

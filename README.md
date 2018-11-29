@@ -17,15 +17,4 @@ loop and will not fail.*
 > My goal with step one is to create a useable thermostate that can read the temperature and control a fan 
 > to adjust the temperature accordingly. So basically create an a/c unit and thermostate. 
 
-```python
-def func():
-  return state
-  ```
-```c
-void setup(){
-  Serial.begin(9600);
-  }
-void loop(){
-  Serial.println(temp);
-  }
-  ```
+- First I used a lm35 reciever connected to an Arduino UNO so that I could recieve and covert the temperature to a readable float

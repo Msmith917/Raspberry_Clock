@@ -18,6 +18,7 @@ loop and will not fail.*
 > to adjust the temperature accordingly. So basically create an a/c unit and thermostate. 
 
 - First I used a lm35 reciever connected to an Arduino UNO so that I could recieve and covert the temperature to a readable float
+The following code is used on an Arduino UNO and compiled on my Raspberry Pi to grab the temperature, convert it, print out the degrees in fahrenheit to terminal
 ##### Code used for Arduino UNO
 ```C 
 // initialize variables for the pin, and the floats, (celsius, and fahrenheit)

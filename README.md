@@ -12,7 +12,7 @@
 even using the Arduino as well. Start with a simple program that runs and on an infinite
 loop and will not fail.*
 
-## 1. Read Temperature
+## 1. Read Indoor/Outdoor Temperature
 > My goal with step one is to create a useable thermostate that can read the temperature in my room
 
 - First I used a lm35 reciever connected to an Arduino UNO so that I could recieve and covert the temperature to a readable float

@@ -13,7 +13,7 @@ even using the Arduino as well. Start with a simple program that runs and on an 
 loop and will not fail.*
 
 ## 1. Read Indoor/Outdoor Temperature
-> My goal with step one is to create a useable thermostate that can read the temperature in my room
+> My goal with step one is to make a board that can read the temperature in my room and the temperature and humidity outside
 
 - First I used a lm35 reciever connected to an Arduino UNO so that I could recieve and covert the temperature to a readable float
 The following code is used on an Arduino UNO and compiled on my Raspberry Pi to grab the temperature, convert it, print out the degrees in fahrenheit to terminal

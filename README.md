@@ -5,6 +5,7 @@
 ### Functions (should include but not limited to):
   ##### - Reading indoor and outdoor temperature and humidity
   ##### - Give update on current weather
+  ##### - Tell the current time
   ##### - Ability to talk to me, i.e. (JASPER: tell me time, remind me to do things)
   ##### - Do I need a jacket? 
 
@@ -85,4 +86,26 @@ def report(i):
   
 report(0) #current day report
 report(1) #report for tomorrow
+```
+
+## 3. The Clock
+> Finally building the actual user interface for the clock; the most work will be put in here, but changes and additions should happen regularly
+
+- Basic clock UI with Python's module tkinter
+
+```Python
+import time, tkinter
+from tkinter import *
+
+def tick():
+    time_string = time.strftime("%I:%M:%S %p")
+    clock.config(text=time_string)
+    clock.after(200,tick)
+
+root = tkinter.Tk()
+clock = Label(root, font=('times', 200))
+clock.grid(row=0, column=1)
+tick()
+
+root.mainloop()
 ```

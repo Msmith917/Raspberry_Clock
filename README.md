@@ -62,3 +62,7 @@ while True:
   #Pause the loop for 1 second
   time.sleep(1)
   ```
+## 2. Weather Report
+> Step 2 is creating a user interface that reads the current weather 
+
+- Python comes with a weather-api, makes for reading the weather and displaying it appropriately easy

@@ -66,3 +66,23 @@ while True:
 > Step 2 is creating a user interface that reads the current weather 
 
 - Python comes with a weather-api, makes for reading the weather and displaying it appropriately easy
+
+```Python
+from weather import Weather, Unit
+weather = Weather(unit=Unit.FAHRENHEIT)
+
+location = weather.lookup_by_location('beaumont')
+forecasts = location.forecast
+
+def report(i):
+  date = forecasts[i].date
+  condition = forecasts[i].text
+  high = forecasts[i].high
+  low = forecasts[i].low
+  
+  print(f'Weather in Bmt, Texas {date}')
+  print(f'{condition} with a high of: {high} and a low of: {low}')
+  
+report(0) #current day report
+report(1) #report for tomorrow
+```

@@ -1,3 +1,4 @@
+# The very first version of my Pi_Clock
 import tkinter, serial, re, os, time, weather
 from serial import Serial
 from tkinter import *

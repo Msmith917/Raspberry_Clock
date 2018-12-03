@@ -1,3 +1,4 @@
+# Reads the Indoor Temperature
 import serial, re, os, time
 from serial import Serial
 

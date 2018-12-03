@@ -14,3 +14,7 @@ even using the Arduino as well. Start with a simple program that runs and on an 
 loop and will not fail.*
 
 ## Look in the Wiki for more information on the following:
+- Read Indoor Temperature
+- Weather Report
+- The Clock 
+- Versions

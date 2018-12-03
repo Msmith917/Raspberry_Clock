@@ -1,3 +1,4 @@
+# This is the Code for a simple Digital Clock UIs
 import time, tkinter
 from tkinter import *
 

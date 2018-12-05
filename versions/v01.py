@@ -37,15 +37,25 @@ def tomorrow():
 	tomorrow_forecast.after(300000,tomorrow)
 
 # Uses the Arduino to find the Serial Number and read the indoor temperature
-def roomTemp():
+def Temperature():
 	ser = serial.Serial('/dev/ttyACM0', 9600)
 	byt = ser.readline()
 	# Uses a regex to pull a string from the byte format type
 	res = re.compile('\d+.\d+')
-	temp = res.search(str(byt))
-	temp_f = round(float(temp.group()))
-	indoor_temp.config(text=f'Room Temperature: {temp_f}')
-	indoor_temp.after(20000,roomTemp)
+	temp = res.findall(str(byt))
+	if len(temp) == 3:
+		inTemp = round(float(temp[0]))
+		outTemp = round(float(temp[1]))
+		hum = round(float(temp[2]))
+		indoor_temp.config(text=f'Room Temperature: {inTemp}')
+		outdoor_temp.config(text=f'Outdoor Temperature: {outTemp}')
+		humidity.config(text=f'Humidity: {hum}')
+		humidity.after(200, Temperature)
+	else:
+		Temperature()
+	
+	
+
 
 # Sets the current date on the using the weather-API
 def date():
@@ -61,17 +71,21 @@ today_forecast = Label(root, text="Today's Forecast")
 tomorrow_forecast = Label(root, text="Tomorrow's Forecast")
 current_time = Label(root, text='Current Time', font=('times', 60))
 indoor_temp = Label(root, text='Indoor Temp')
+outdoor_temp = Label(root, text='Outdoor Temp')
+humidity = Label(root, text='Humidity')
 
 current_date.place(x=350, y=20)
 today_forecast.place(x=20, y=40 )
 tomorrow_forecast.place(x=20, y=100)
 current_time.place(x=400, y=80)
-indoor_temp.place(x=500, y=20)
+indoor_temp.place(x=475, y=20)
+outdoor_temp.place(x=475, y=40)
+humidity.place(x=475, y=60)
 
 # Run all the function 
 today()
 tomorrow()
-roomTemp()
+Temperature()
 date()
 tick()
 root.mainloop()

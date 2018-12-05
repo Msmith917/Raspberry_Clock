@@ -11,9 +11,17 @@ while True:
   byt = ser.readline()
   #Use a regex to convert the byte info into a float
   res = re.compile('\d+.\d+')
-  temp = res.search(str(byt))
-  temp_f = round(float(temp.group()))
+  temp = res.findall(str(byt))
+  if len(temp) == 3:
+    print(temp)
+    inTemp = round(float(temp[0]))
+    outTemp = round(float(temp[1]))
+    hum = round(float(temp[2]))
   #Print the temperature in fahrenheit
-  print(temp_f)
+    print(inTemp)
+    print(outTemp)
+    print(hum)
+  else:
+    pass
   #Pause the loop for 1 second
   time.sleep(1)

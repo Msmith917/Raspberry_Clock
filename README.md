@@ -1,6 +1,6 @@
 # Raspberry_Clock
-> Private repository dedicated to my raspberry pi smart clock project. 
-> This project will be to create a smart clock for my room
+> Private repository dedicated to my raspberry pi clock project. 
+> This project will be to create a clock with built in functions for my room
 
 ### Functions (should include but not limited to):
   ##### - Reading indoor and outdoor temperature and humidity

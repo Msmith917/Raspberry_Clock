@@ -22,7 +22,7 @@ def today():
 	high = forecasts[0].high
 	low = forecasts[0].low
 
-	today_forecast.config(text=f'Weather for today in Bmt, Texas\n{condition} with a high of: {high} and a low of: {low}')
+	today_forecast.config(text='Weather for today in Bmt, Texas\n{} with a high of: {} and a low of: {}'.format(condition, high, low))
 	# Allows the forcast to update every five minutes
 	today_forecast.after(300000,today)
 
@@ -32,7 +32,7 @@ def tomorrow():
 	high = forecasts[1].high
 	low = forecasts[1].low
 
-	tomorrow_forecast.config(text=f'Weather for Tomorrow in Bmt, Texas\n{condition} with a high of: {high} and a low of: {low}')
+	tomorrow_forecast.config(text='Weather for Tomorrow in Bmt, Texas\n{} with a high of: {} and a low of: {}'.format(condition, high, low))
 	# Display updates every five minutes
 	tomorrow_forecast.after(300000,tomorrow)
 
@@ -47,9 +47,9 @@ def Temperature():
 		inTemp = round(float(temp[0]))
 		outTemp = round(float(temp[1]))
 		hum = round(float(temp[2]))
-		indoor_temp.config(text=f'Room Temperature: {inTemp}')
-		outdoor_temp.config(text=f'Outdoor Temperature: {outTemp}')
-		humidity.config(text=f'Humidity: {hum}')
+		indoor_temp.config(text='Room Temperature: {}'.format(inTemp))
+		outdoor_temp.config(text='Outdoor Temperature: {}'.format(outTemp))
+		humidity.config(text='Humidity: {}'.format(hum))
 		humidity.after(200, Temperature)
 	else:
 		Temperature()

@@ -5,6 +5,7 @@
 ### Functions (should include but not limited to):
   ##### - Reading indoor and outdoor temperature and humidity
   ##### - Give update on current weather
+  ##### - Have ability to change location for Weather search
   ##### - Tell the current time
   ##### - Ability to talk to me, i.e. (JASPER: tell me time, remind me to do things)
   ##### - Do I need a jacket? 

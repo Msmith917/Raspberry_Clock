@@ -1,4 +1,4 @@
-import tkinter, serial, re, os, time, weather
+import tkinter, serial, re, os, time, weather, pyttsx3
 from tkinter import *
 from serial import Serial
 from weather import Weather, Unit
@@ -7,6 +7,46 @@ from weather import Weather, Unit
 weather = Weather(unit=Unit.FAHRENHEIT)
 location = weather.lookup_by_location('beaumont')
 forecasts = location.forecast
+
+# Function for the command 'Do I need a jacket?'
+def jacket():
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 100)
+
+    def wearJacket():
+        engine.say('You might want to wear a jacket')
+        engine.runAndWait()
+
+    def noJacket():
+        engine.say('You probably will not need a jacket')
+        engine.runAndWait()
+
+    weather = Weather(unit=Unit.FAHRENHEIT)
+    location = weather.lookup_by_location('beaumont')
+    forecasts = location.forecast
+
+    condition = forecasts[0].text
+    low = int(forecasts[0].low)
+    high = int(forecasts[0].high)
+
+    if low < 50:
+        wearJacket()
+        pass
+
+    elif high < 65:
+        wearJacket()
+        pass
+
+    elif "Rainy" or "Rain" or "Raining" in condition:
+        wearJacket()
+        pass
+
+    elif "Thunderstorm" or "Snow" or "Snowing" in condition:
+        wearJacket()
+        pass
+
+    else:
+        noJacket()
 
 # Tick function for the clock that will be displayed
 def tick():
@@ -91,7 +131,7 @@ current_date = Label(root, text="Today's Date", bg='#060614', fg='#cccccc')
 current_time = Label(root, text='Current Time', font=('times', 60), bg='#060614', fg='#cccccc')
 indoor_temp = Label(root, text='Indoor Temp', bg='#060614', fg='#cccccc')
 outdoor_temp = Button(root, text='Outdoor Temp', command=new_winF, bg='#060614', fg='#cccccc')
-jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc')
+jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc', command=jacket)
 
 
 # the pack and griding for all the widgets 
@@ -104,5 +144,6 @@ current_time.pack(anchor='center', padx=30, pady=100)
 jacket.pack(side='bottom', pady=100)
 
 date()
+tick()
 
 root.mainloop()

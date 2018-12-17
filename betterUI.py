@@ -4,11 +4,12 @@ from tkinter import *
 def new_winF(): # new window definition
 
     newwin = Toplevel(root)
+    newwin.configure(background='#060614')
     # widgits used in the new window frame
-    today_forecast = Label(newwin, text="Today's Forecast")
-    tomorrow_forecast = Label(newwin, text="Tomorrow's Forecast")
-    humidity = Label(newwin, text='Humidity')
-    outdoor_temp = Label(newwin, text='Outdoor Temp')
+    today_forecast = Label(newwin, text="Today's Forecast", bg='#060614', fg='#cccccc')
+    tomorrow_forecast = Label(newwin, text="Tomorrow's Forecast", bg='#060614', fg='#cccccc')
+    humidity = Label(newwin, text='Humidity', bg='#060614', fg='#cccccc')
+    outdoor_temp = Label(newwin, text='Outdoor Temp', bg='#060614', fg='#cccccc')
 
     today_forecast.pack()
     tomorrow_forecast.pack()
@@ -18,13 +19,14 @@ def new_winF(): # new window definition
 # main window for the application
 root = tkinter.Tk()
 root.title('Pi_Clock')
+root.configure(background='#060614')
 
 # Widgets used in application
-current_date = Label(root, text="Today's Date")
-current_time = Label(root, text='Current Time', font=('times', 60))
-indoor_temp = Label(root, text='Indoor Temp')
-outdoor_temp = Button(root, text='Outdoor Temp', command=new_winF)
-jacket = Button(root, text='Do I Need A Jacket?')
+current_date = Label(root, text="Today's Date", bg='#060614', fg='#cccccc')
+current_time = Label(root, text='Current Time', font=('times', 60), bg='#060614', fg='#cccccc')
+indoor_temp = Label(root, text='Indoor Temp', bg='#060614', fg='#cccccc')
+outdoor_temp = Button(root, text='Outdoor Temp', command=new_winF, bg='#060614', fg='#cccccc')
+jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc')
 
 
 # the pack and griding for all the widgets 

@@ -1,0 +1,28 @@
+* {
+    margin: 10px;
+    padding: 5px;
+}
+.current_date {
+    text-align: center;
+}
+
+.current_time {
+    text-align: center;
+}
+
+.indoor_temp {
+    display: inline-block;
+}
+
+.outdoor_temp {
+    display: inline-block;
+}
+
+div {
+    text-align: center;
+}
+
+.jacket {
+    text-align: center;
+}
+

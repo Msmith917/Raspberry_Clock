@@ -128,7 +128,7 @@ root.configure(background='#060614')
 
 # Widgets used in application
 current_date = Label(root, text="Today's Date", bg='#060614', fg='#cccccc')
-current_time = Label(root, text='Current Time', font=('times', 60), bg='#060614', fg='#cccccc')
+current_time = Label(root, text='Current Time', font=('times'), bg='#060614', fg='#cccccc')
 indoor_temp = Label(root, text='Indoor Temp', bg='#060614', fg='#cccccc')
 outdoor_temp = Button(root, text='Outdoor Temp', command=new_winF, bg='#060614', fg='#cccccc')
 jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc', command=jacket)
@@ -139,11 +139,12 @@ indoor_temp.pack(side='left', padx=30, pady=30)
 outdoor_temp.pack(side='right', padx=30, pady=30)
 
 current_date.pack(side='top', padx=30, pady=30)
-current_time.pack(anchor='center', padx=30, pady=100)
+current_time.pack(anchor='center')
 
-jacket.pack(side='bottom', pady=100)
+jacket.pack(side='bottom')
 
 date()
 tick()
+Temperature()
 
 root.mainloop()

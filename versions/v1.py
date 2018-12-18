@@ -153,7 +153,7 @@ jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc', co
 indoor_temp.pack(side='left')
 outdoor_temp.pack(side='right')
 
-current_date.pack(side='top)
+current_date.pack(side='top')
 current_time.pack(anchor='center')
 
 jacket.pack(side='bottom')

@@ -98,7 +98,7 @@ def outDoor(outdoor_temp, humidity):
 		outTemp = round(float(temp[1]))
 		hum = round(float(temp[2]))
 		outdoor_temp.config(text='Outdoor Temperature: {}'.format(outTemp))
-		humidity.config(text='Humidity: {}'.format(hum))
+		humidity.config(text='Humidity: {}%'.format(hum))
 		humidity.after(200, outDoor)
 	else:
 		outDoor(outdoor_temp, humidity)

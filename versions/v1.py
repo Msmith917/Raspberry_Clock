@@ -72,7 +72,7 @@ def tomorrow(tomorrow_forecast):
 	tomorrow_forecast.config(text='Weather for Tomorrow in Bmt, Texas\n{} with a high of: {} and a low of: {}'.format(condition, high, low))
 
 # Uses the Arduino to find the Serial Number and read the indoor temperature
-def Temperature(humidity):
+def Temperature():
 	ser = serial.Serial('/dev/ttyACM0', 9600)
 	byt = ser.readline()
 	# Uses a regex to pull a string from the byte format type
@@ -87,7 +87,22 @@ def Temperature(humidity):
 		humidity.config(text='Humidity: {}'.format(hum))
 		humidity.after(200, Temperature)
 	else:
-		Temperature(humidity)
+		Temperature()
+		
+def outDoor(outdoor_temp, humidity):
+	ser = serial.Serial('/dev/ttyACM0', 9600)
+	byt = ser.readline()
+	# Uses a regex to pull a string from the byte format type
+	res = re.compile('\d+.\d+')
+	temp = res.findall(str(byt))
+	if len(temp) == 3:
+		outTemp = round(float(temp[1]))
+		hum = round(float(temp[2]))
+		outdoor_temp.config(text='Outdoor Temperature: {}'.format(outTemp))
+		humidity.config(text='Humidity: {}'.format(hum))
+		humidity.after(200, outDoor)
+	else:
+		outDoor(outdoor_temp, humidity)
 	
 	
 
@@ -146,6 +161,6 @@ jacket.pack(side='bottom')
 
 date()
 tick()
-Temperature(humidity)
+Temperature()
 
 root.mainloop()

@@ -146,6 +146,6 @@ jacket.pack(side='bottom')
 
 date()
 tick()
-Temperature()
+Temperature(humidity)
 
 root.mainloop()

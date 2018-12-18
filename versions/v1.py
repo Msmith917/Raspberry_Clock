@@ -84,8 +84,7 @@ def Temperature():
 		hum = round(float(temp[2]))
 		indoor_temp.config(text='Room Temperature: {}'.format(inTemp))
 		outdoor_temp.config(text='Outdoor Temperature: {}'.format(outTemp))
-		humidity.config(text='Humidity: {}'.format(hum))
-		humidity.after(200, Temperature)
+		outdoor_temp.after(200, Temperature)
 	else:
 		Temperature()
 		

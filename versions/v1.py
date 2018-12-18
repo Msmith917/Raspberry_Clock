@@ -72,7 +72,7 @@ def tomorrow(tomorrow_forecast):
 	tomorrow_forecast.config(text='Weather for Tomorrow in Bmt, Texas\n{} with a high of: {} and a low of: {}'.format(condition, high, low))
 
 # Uses the Arduino to find the Serial Number and read the indoor temperature
-def Temperature():
+def Temperature(humidity):
 	ser = serial.Serial('/dev/ttyACM0', 9600)
 	byt = ser.readline()
 	# Uses a regex to pull a string from the byte format type
@@ -87,7 +87,7 @@ def Temperature():
 		humidity.config(text='Humidity: {}'.format(hum))
 		humidity.after(200, Temperature)
 	else:
-		Temperature()
+		Temperature(humidity)
 	
 	
 
@@ -120,6 +120,7 @@ def new_winF(): # new window definition
 
     today(today_forecast)
     tomorrow(tomorrow_forecast)
+    temperature(humidity)
 
 # main window for the application
 root = tkinter.Tk()

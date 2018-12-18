@@ -134,7 +134,7 @@ def new_winF(): # new window definition
 
     today(today_forecast)
     tomorrow(tomorrow_forecast)
-    temperature(humidity)
+    outDoor(outdoor_temp, humidity)
 
 # main window for the application
 root = tkinter.Tk()
@@ -150,10 +150,10 @@ jacket = Button(root, text='Do I Need A Jacket?', bg='#060614', fg='#cccccc', co
 
 
 # the pack and griding for all the widgets 
-indoor_temp.pack(side='left', padx=30, pady=30)
-outdoor_temp.pack(side='right', padx=30, pady=30)
+indoor_temp.pack(side='left')
+outdoor_temp.pack(side='right')
 
-current_date.pack(side='top', padx=30, pady=30)
+current_date.pack(side='top)
 current_time.pack(anchor='center')
 
 jacket.pack(side='bottom')
